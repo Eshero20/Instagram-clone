@@ -69,9 +69,19 @@
               style="height: 300px; max-width: 1060px"
             />
           </div>
-
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <img
+                src="~/assets/instagram-front-page-phone.png"
+                style="height: 300px; max-width: 1060px"
+              />
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">col</div>
+          </div>
         </q-page>
       </q-page-container>
     </q-layout>
   </div>
 </template>
+
