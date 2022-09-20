@@ -1,87 +1,126 @@
 <template>
-  <div class="q-pa-md">
-    <q-layout
-      view="lHh lpr lFf"
-      container
-      style="height: 400px"
-      class="shadow-2 rounded-borders"
-    >
-      <q-header bordered class="bg-white text-primary">
-        <q-toolbar>
-          <q-toolbar-title class="text-center">
-            <img src="~assets/instagram-front-logo.png" style="height: 50px" />
-          </q-toolbar-title>
-        </q-toolbar>
-      </q-header>
-      <q-footer bordered class="bg-white text-primary">
-        <q-tabs
-          no-caps
-          active-color="primary"
-          indicator-color="transparent"
-          class="text-grey"
-          v-model="tab"
-        >
-          <q-tab name="Meta" label="Meta" />
-          <q-tab name="About" label="About" />
-          <q-tab name="Blog" label="Blog" />
-          <q-tab name="Jobs" label="Jobs" />
-          <q-tab name="Help" label="Videos" />
-          <q-tab name="API" label="API" />
-          <q-tab name="Privacy" label="Privacy" />
-          <q-tab name="Terms" label="Terms" />
-          <q-tab name="Top Accounts" label="Top Accounts" />
-          <q-tab name="Hashtags" label="Hashtags" />
-          <q-tab name="Locations" label="Locations" />
-          <q-tab name="Instagram Lite" label="Instagram Lite" />
-        </q-tabs>
-        <q-tabs
-          no-caps
-          active-color="primary"
-          indicator-color="transparent"
-          class="text-grey"
-          v-model="tab"
-        >
-          <q-tab
-            name="Contact Uploading & Non-Users"
-            label="Contact Uploading & Non-Users"
-          />
-        </q-tabs>
-        <q-tabs
-          no-caps
-          active-color="primary"
-          indicator-color="transparent"
-          class="text-grey"
-          v-model="tab"
-        >
-          <q-tab name="Dance" label="Dance" />
-          <q-tab name="Food & Drink" label="Food & Drink" />
-          <q-tab name="Home & Garden" label="Home & Garden" />
-          <q-tab name="Music" label="Music" />
-          <q-tab name="Visual Arts" label="Viusal Arts" />
-        </q-tabs>
-      </q-footer>
+  <q-layout view="hHh LpR fFf" class="shadow-2 rounded-borders">
+    <q-header bordered class="bg-white text-primary">
+      <q-toolbar>
+        <q-toolbar-title class="text-center">
+          <img src="~assets/instagram-front-logo.png" style="height: 50px" />
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
+    <q-footer bordered class="bg-white text-grey">
+      <q-item bordered separator>
+        <q-item clickable v-ripple>
+          <q-item-section> Meta </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> About </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Blog </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Jobs </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Help </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> API </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Privacy </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Terms </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Top Accounts</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Hashtags</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Locations</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Instagram Lite</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section> Contact Uploading & Non-Users </q-item-section>
+        </q-item>
+      </q-item>
+      <q-list dense borderless padding class="borderless"></q-list>
+      <q-item clickable v-ripple>
+        <q-item-section> Hashtags</q-item-section>
+      </q-item>
+    </q-footer>
 
-      <q-page-container>
-        <q-page class="q-pa-md">
-          <div>
+    <q-page-container>
+      <q-page class="text-center">
+        <div>
             <img
-              src="~/assets/instagram-front-page-phone.png"
-              style="height: 300px; max-width: 1060px"
-            />
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4"></div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <img
-                src="~/assets/instagram-front-page-phone.png"
-                style="height: 300px; max-width: 1060px"
-              />
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">col</div>
-          </div>
-        </q-page>
-      </q-page-container>
-    </q-layout>
-  </div>
+            src="~/assets/instagram-front-page-phone.png"
+            style="height: 500px; max-width: 1060px ,;"
+            class="text-center"
+          />
+        </div>
+      </q-page>
+    </q-page-container>
+  </q-layout>
 </template>
 
+<script>
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
+  name: "SimpleLayout",
+  setup() {
+    const linksList = [
+      {
+        title: "Docs",
+        caption: "quasar.dev",
+        icon: "school",
+        link: "https://quasar.dev",
+      },
+      {
+        title: "Github",
+        caption: "github.com/quasarframework",
+        icon: "code",
+        link: "https://github.com/quasarframework",
+      },
+      {
+        title: "Discord Chat Channel",
+        caption: "chat.quasar.dev",
+        icon: "chat",
+        link: "https://chat.quasar.dev",
+      },
+      {
+        title: "Forum",
+        caption: "forum.quasar.dev",
+        icon: "record_voice_over",
+        link: "https://forum.quasar.dev",
+      },
+      {
+        title: "Twitter",
+        caption: "@quasarframework",
+        icon: "rss_feed",
+        link: "https://twitter.quasar.dev",
+      },
+      {
+        title: "Facebook",
+        caption: "@QuasarFramework",
+        icon: "public",
+        link: "https://facebook.quasar.dev",
+      },
+      {
+        title: "Quasar Awesome",
+        caption: "Community Quasar projects",
+        icon: "favorite",
+        link: "https://awesome.quasar.dev",
+      },
+    ];
+    const tab = ref();
+    return { linksList };
+  },
+});
+</script>
