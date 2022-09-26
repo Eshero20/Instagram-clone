@@ -1,13 +1,14 @@
 <template>
   <q-layout view="hHh LpR fFf" class="shadow-2 rounded-borders">
-    <q-header bordered class="bg-white text-primary">
+    <q-header bordered class="bg-white text-grey">
       <q-toolbar>
         <q-toolbar-title class="text-center">
           <img src="~assets/instagram-front-logo.png" style="height: 50px" />
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
-    <q-footer bordered class="bg-white text-grey">
+    <q-footer>
+    <q-item bordered class="bg-white text-grey">
       <q-item bordered separator>
         <q-item clickable v-ripple>
           <q-item-section> Meta </q-item-section>
@@ -49,21 +50,38 @@
           <q-item-section> Contact Uploading & Non-Users </q-item-section>
         </q-item>
       </q-item>
+    </q-item>
       <q-list dense borderless padding class="borderless"></q-list>
       <q-item clickable v-ripple>
         <q-item-section> Hashtags</q-item-section>
       </q-item>
     </q-footer>
-
+  <div class="q-pa-md doc-container">
+  </div>
     <q-page-container>
-      <q-page class="text-center">
+      <q-page class="row justify-center">
+        <div class="q-pa-md doc-container">
         <div>
-            <img
+          <img
             src="~/assets/instagram-front-page-phone.png"
-            style="height: 500px; max-width: 1060px ,;"
-            class="text-center"
-          />
+            style="height: 500px; max-width: 1060px"
+            class="center" />
+            <div class="row justify-center">
+      <div class="col-2">
         </div>
+        </div>
+        <q-page class="row justify-center">
+        <q-badge>
+          <q-input outlined v-model="text" label="Phone number, username or email"/>
+          <q-input outlined v-model="text" label="Password"  item-aligned:right />
+          <div class="row justify-center">
+            </div>
+          <div class="col-3">
+            </div>
+          </q-badge>
+          </q-page>
+        </div>
+      </div>
       </q-page>
     </q-page-container>
   </q-layout>
@@ -124,3 +142,12 @@ export default defineComponent({
   },
 });
 </script>
+
+
+
+
+
+
+
+
+

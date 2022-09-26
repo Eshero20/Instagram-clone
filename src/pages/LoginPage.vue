@@ -1,16 +1,15 @@
 <template>
   <q-page class="flex flex-center">
     <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
+      alt="Instagram logo"
+      src="~assets/instagram-front-page-phone.png"
+      style="width: 250px; height: 500px"
     />
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "IndexPage",
 });
