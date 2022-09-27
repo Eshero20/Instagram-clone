@@ -58,22 +58,6 @@
     <q-page-container class="bg-grey-1">
       <router-view />
     </q-page-container>
-    <q-page-container>
-      <q-page class="row justify-center">
-        <div class="q-pa-md doc-container">
-          <div>
-            <img
-              src="~/assets/instagram-front-page-phone.png"
-              style="height: 500px; max-width: 1060px"
-              class="center"
-            />
-            <div class="row justify-center">
-              <div class="col-2"></div>
-            </div>
-          </div>
-        </div>
-      </q-page>
-    </q-page-container>
   </q-layout>
 </template>
 

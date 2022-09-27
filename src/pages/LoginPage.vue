@@ -44,7 +44,7 @@ export default defineComponent({
           <q-card-section>
             <q-form class="q-gutter-md">
               <div>
-                <img src="~assets/instagram-front-logo.png" style="width: 200px;
+                <img src="~assets/instagram-front-logo.png" style="width: 250px;
                 height: 50px" object fit: cover />
               </div>
               <q-input
