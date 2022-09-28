@@ -1,22 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header bordered class="bg-white text-grey-10">
-      <q-toolbar class="constrain">
-        <q-separator class="large-screen-only" spaced="12px" vertical />
-        <q-toolbar-title class="text-center">
-          <img src="~assets/instagram-front-logo.png" style="height: 50px" />
-        </q-toolbar-title>
-        <q-btn
-          to="/"
-          class="large-screen-only"
-          flat
-          round
-          icon="none"
-          size="18px"
-        />
-      </q-toolbar>
-    </q-header>
-    <q-footer bordered class="bg-white small-screen-only">
+
+
+    <q-footer bordereless class="bg-white small-screen-only">
+
       <q-btn flat color="grey" label="Meta" :to="{ name: '/meta' }" />
       <q-btn flat color="grey" label="About" :to="{ name: '/About' }" />
       <q-btn flat color="grey" label="Blog" :to="{ name: '/meta' }" />
@@ -39,13 +26,11 @@
 
       <q-btn flat color="grey" label="Instagram Lite" :to="{ name: '/meta' }" />
 
-      <q-btn
-        flat
-        color="grey"
-        label="Contact Uploading & Non-Users"
-        :to="{ name: '/meta' }"
+      <q-btn flat color="grey" label="Contact Uploading & Non-Users" :to="{ name: '/meta' }"
       />
-      <q-btn flat color="grey" label="Dance" :to="{ name: '/meta' }" />
+      <q-btn flat color="grey" label="Dance"
+      :to="{ name: '/meta' }"
+      />
 
       <q-btn flat color="grey" label="Food & Drink" :to="{ name: '/meta' }" />
 
