@@ -26,6 +26,11 @@ export default defineComponent({
 </script>
 -->
 <template>
+  <div class="iNy2T">
+    <a aria-label="Download on the App Store" class="instaplaybuttons" href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo" tabindex="0">
+    <img alt="Download on the App Store" class="Rt8TI " src="src/assets/download on the App Store.png" height="40" width="136"></a>
+    <a aria-label="Get it on Google Play" class="z1VUo" href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D0805B945-FF48-4C78-809F-9C80BE81B570%26utm_content%3Dlo%26utm_medium%3Dbadge" tabindex="0">
+    <img alt="Get it on Google Play" class="Rt8TI " src="src/assets/Get it on Google Play.png" height="40" width="136"></a></div>
   <q-page
     class="bg-white window-height window-width row justify-center items-center"
   >
