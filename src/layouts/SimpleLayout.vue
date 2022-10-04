@@ -1,4 +1,5 @@
 <template>
+  <title>Instagram</title>
 <q-layout view="lHh Lpr lFf">
     <q-footer bordereless class="bg-white small-screen-only">
 
