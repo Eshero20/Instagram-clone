@@ -7,22 +7,23 @@
       <q-layout
         view="lHh lpr lFf"
         container
-        style="height: 100px
+        style="height:
       margin:fit-content;
-       width: 350px;
+       width: 340px;
        height: 570px;
        border-radius: 2px;"
         class="shadow-2 squared-borders"
       >
-        <div class="log-in-container">
+        <div class="log-in-container column items- center">
           <div class="log-in">
             <!-- Instagram Logo-->
             <img
               src="src/assets/instagram-logo.png"
-              style="height: 150px; width: 250px"
+              style="height: 150px; width: 300px"
+
             />
             <!-- Log in form -->
-            <div class="log-in-"></div>
+            <div class="log-in-" style="max-width: 300px"></div>
             <q-input
               row
               input-class="10"
@@ -31,8 +32,8 @@
               v-model="email"
               type="email"
               label="Phone number, username, or email"
-              height="36"
-              weight="213"
+              height="30"
+              max weight="200"
               padding= 9px,0,7px,8px;
             />
             <q-input
@@ -62,16 +63,40 @@
                   class="icon"
                   width="16"
                   height="16"
+                  padding="9px"
+
                 />
+                <a href="#"></a>
                 <div>Log in with Facebook</div>
               </a>
             </div>
             <!-- Forgot Instagram Password -->
             <div>Forgot Password?</div>
+            <q-card-section class="text-center q-md-md">
+              <div class="row bg-blue-white-2" style="width: 100%; padding: 10px;">
+            <div id="parent" class="fit row wrap justify-center items-start content-start" style="overflow: hidden;">
+              <div class="col-5      bg-white-6" >
+                <q-card>Don't have an account? Sign up</q-card>
 
-            <q-card-section class="text-center q-pa-none">
-              <p class="text-grey-6">Don't have an account? Sign up</p>
-              <q-card-section class="text-cente q-pa-none">
+<!--
+    <q-card class="my-card">
+      <q-card-section class="bg-grey-8 text-white">
+        <div class="text-h6">Our Changing Planet</div>
+        <div class="text-subtitle2">by John Doe</div>
+      </q-card-section>
+
+      <q-card-actions vertical align="center">
+        <q-btn flat>Action 1</q-btn>
+        <q-btn flat>Action 2</q-btn>
+      </q-card-actions>
+    </q-card>
+-->
+        </div>
+        </div>
+        </div>
+      <div class="col"></div>
+              <div>Get App?</div>
+              <q-card-section class="text-center q-pa-none">
                 <div>
                   <a
                     aria-label="Download on the App Store"
