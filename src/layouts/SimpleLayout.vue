@@ -25,8 +25,8 @@
 
       <q-btn flat color="grey" label="Instagram Lite" :to="{ name: '/Instagram Lite' }" />
 
-      <q-btn flat color="grey" label="Contact Uploading & Non-Users" :to="{ name: '/Contact' }"
-      />
+      <q-btn flat color="grey" label="Contact Uploading & Non-Users" :to="{ name: '/Contact' }" />
+      
       <q-btn flat color="grey" label="Dance" :to="{ name: '/Dance' }" />
 
       <q-btn flat color="grey" label="Food & Drink" :to="{ name: '/Food&Drink' }" />

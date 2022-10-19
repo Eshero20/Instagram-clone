@@ -1,160 +1,141 @@
+<script setup>
+import { useQuasar } from "quasar";
+import { ref } from "vue";
+
+const $q = useQuasar();
+
+const name = ref(null);
+const age = ref(null);
+const accept = ref(false);
+
+const onSubmit = () => {
+  if (accept.value !== true) {
+    $q.notify({
+      color: "red-5",
+      textColor: "white",
+      icon: "warning",
+      message: "You need to accept the license and terms first",
+    });
+  } else {
+    $q.notify({
+      color: "green-4",
+      textColor: "white",
+      icon: "cloud_done",
+      message: "Submitted",
+    });
+  }
+};
+
+const onReset = () => {
+  name.value = null;
+  age.value = null;
+  accept.value = false;
+};
+</script>
+
 <template>
-  <q-page
-    class="bg-white window-height= window-width row justify-center items-center"
-    squared
-  >
-    <div class="q-pa-md">
-      <q-layout
-        view="lHh lpr lFf"
-        container
-        style="height:
-      margin:fit-content;
-       width: 340px;
-       height: 570px;
-       border-radius: 2px;"
-        class="shadow-2 squared-borders"
-      >
-        <div class="log-in-container column items- center">
-          <div class="log-in">
-            <!-- Instagram Logo-->
-            <img
-              src="src/assets/instagram-logo.png"
-              style="height: 150px; width: 300px"
-
-            />
-            <!-- Log in form -->
-            <div class="log-in-" style="max-width: 300px"></div>
+  <q-page class="window-height window-width row justify-center items-center">
+    <div class="row">
+      <div class="col-6 q-pr-xs">
+        <q-img height="500px" width="300px" src="../assets/phones.png" />
+      </div>
+      <div class="col-6 q-pl-xs" style="width: 50%; ">
+        <div class="q-pa-md">
+          <q-img src="../assets/instagram-logo.png" />
+          <q-form @submit="onSubmit" @reset="onReset" class="row">
             <q-input
-              row
-              input-class="10"
-              square
-              filled
-              v-model="email"
-              type="email"
+              outlined
+              dense
+              v-model="name"
+              class="col-12"
               label="Phone number, username, or email"
-              height="30"
-              max weight="200"
-              padding= 9px,0,7px,8px;
+              lazy-rules
+              :rules="[
+                (val) => (val && val.length > 0) || 'Please type something',
+              ]"
             />
+
             <q-input
-              square
-              filled
-              v-model="password"
+              outlined
+              dense
               type="password"
+              v-model="password"
+              class="col-12"
               label="Password"
+              lazy-rules
+              :rules="[
+                (val) => (val !== null && val !== '') || 'Please type your age',
+                (val) => (val > 0 && val < 100) || 'Please type a real age',
+              ]"
             />
-            <q-card-actions class="q-px-md">
-              <q-btn
-                unelevated
-                color="light-blue"
-                size="lg"
-                class="full-width"
-                label="Login"
-                margin="0"
-              />
-            </q-card-actions>
-            <!--Divider for Facebook -->
-            <q-separator color="grey" spaced="" inset="" />
-            <!-- Log in Facebook Command-->
-            <div class="fb-login-screen">
-              <a href="#">
-                <img
-                  src="src/assets/facebook-icon.png"
-                  class="icon"
-                  width="16"
-                  height="16"
-                  padding="9px"
 
-                />
-                <a href="#"></a>
-                <div>Log in with Facebook</div>
-              </a>
-            </div>
-            <!-- Forgot Instagram Password -->
-            <div>Forgot Password?</div>
-            <q-card-section class="text-center q-md-md">
-              <div class="row bg-blue-white-2" style="width: 100%; padding: 10px;">
-            <div id="parent" class="fit row wrap justify-center items-start content-start" style="overflow: hidden;">
-              <div class="col-5      bg-white-6" >
-                <q-card>Don't have an account? Sign up</q-card>
+            <q-btn
+              class="col-12"
+              label="Log In"
+              type="submit"
+              color="primary"
+            />
+          </q-form>
+          <q-btn flat src="src/assets/facebook-icon.png" >
+            <q-avatar square size="16px">
+              <img src="src/assets/facebook-icon.png" label="Log in with facebook">
+            </q-avatar>
+            <div>log in with facebook </div>
+          </q-btn>
+          <!-- Forgot Instagram Password -->
+          <a href="#"></a>
+          <div>Forgot Password?</div>
+          <q-card-section class="text-center q-md-md">
+            <div class="q-pa-md q-gutter-sm" style="width: 100%; ">
+              <q-page
+                id="parent"
+                class="fit row wrap justify-center items-start content-start"
+                style="overflow: hidden"
+              >
+                <div class="col-gutter- bg-white-6">
+                  <div class="row justify-center">
+                    <q-card>Don't have an account? Sign up</q-card>
 
-<!--
-    <q-card class="my-card">
-      <q-card-section class="bg-grey-8 text-white">
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
-      </q-card-section>
-
-      <q-card-actions vertical align="center">
-        <q-btn flat>Action 1</q-btn>
-        <q-btn flat>Action 2</q-btn>
-      </q-card-actions>
-    </q-card>
--->
-        </div>
-        </div>
-        </div>
-      <div class="col"></div>
-              <div>Get App?</div>
-              <q-card-section class="text-center q-pa-none">
-                <div>
-                  <a
-                    aria-label="Download on the App Store"
-                    class="instaplaybuttons"
-                    href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo"
-                    tabindex="0"
-                  >
-                    <img
-                      alt="Download on the App Store"
-                      class="Rt8TI"
-                      src="src/assets/download on the App Store.png"
-                      height="40"
-                      width="136"
-                  /></a>
-                  <a
-                    aria-label="Get it on Google Play"
-                    class="z1VUo"
-                    href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D0805B945-FF48-4C78-809F-9C80BE81B570%26utm_content%3Dlo%26utm_medium%3Dbadge"
-                    tabindex="0"
-                  >
-                    <img
-                      alt="Get it on Google Play"
-                      class="Rt8TI"
-                      src="src/assets/Get it on Google Play.png"
-                      height="40"
-                      width="136"
-                  /></a>
+                    <div>
+                      <div class="col-4">
+                        <div>Get App?</div>
+                        <a
+                          aria-label="Download on the App Store"
+                          class="instaplaybuttons"
+                          href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo"
+                          tabindex="0"
+                        >
+                          <img
+                            alt="Download on the App Store"
+                            class="App Button"
+                            src="src/assets/download on the App Store.png"
+                            height="40"
+                            width="136"
+                        /></a>
+                      </div>
+                      <div class="col-5">
+                        <a
+                          aria-label="Get it on Google Play"
+                          class="z1VUo"
+                          href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D0805B945-FF48-4C78-809F-9C80BE81B570%26utm_content%3Dlo%26utm_medium%3Dbadge"
+                          tabindex="0"
+                        >
+                          <img
+                            alt="Get it on Google Play"
+                            class="Rt8TI"
+                            src="src/assets/Get it on Google Play.png"
+                            height="40"
+                            width="136"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </q-card-section>
-            </q-card-section>
-          </div>
+              </q-page>
+            </div>
+          </q-card-section>
         </div>
-      </q-layout>
+      </div>
     </div>
   </q-page>
 </template>
-
-<!--<style>
-  .q-page{
-    width: 600px;
-    border-radius: 1px;
-  }
-
-.log-in-container {
-  margin: 0 auto;
-  width: 268px;
-  height: 38px;
-  border-radius: 1px;
-
-}
-.fb-login-screen{
-    display: inline-block;
-    width: 144.85px;
-    height: 17px;
-}
-.icon {
-     display:inline-block;
-     margin: 30px;
-}
-  </style>
--->
