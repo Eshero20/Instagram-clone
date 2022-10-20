@@ -36,97 +36,109 @@ const onReset = () => {
 <template>
   <q-page class="window-height window-width row justify-center items-center">
     <div class="row">
-      <div class="col-6 q-pr-xs">
+      <div class="col-5 q-pr-xs">
         <q-img height="500px" width="300px" src="../assets/phones.png" />
       </div>
-      <div class="col-6 q-pl-xs" style="width: 50%; ">
+      <div class="col-6 q-pr-xs" style="width: 40%;">
         <div class="q-pa-md">
-          <q-img src="../assets/instagram-logo.png" />
-          <q-form @submit="onSubmit" @reset="onReset" class="row">
-            <q-input
-              outlined
-              dense
-              v-model="name"
-              class="col-12"
-              label="Phone number, username, or email"
-              lazy-rules
-              :rules="[
-                (val) => (val && val.length > 0) || 'Please type something',
-              ]"
-            />
+          <div class="log in box">
+            <q-img src="../assets/instagram-logo.png" />
+            <q-form @submit="onSubmit" @reset="onReset" class="row">
+              <q-input
+                outlined
+                dense
+                v-model="name"
+                class="col-12"
+                label="Phone number, username, or email"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]"
+              />
 
-            <q-input
-              outlined
-              dense
-              type="password"
-              v-model="password"
-              class="col-12"
-              label="Password"
-              lazy-rules
-              :rules="[
-                (val) => (val !== null && val !== '') || 'Please type your age',
-                (val) => (val > 0 && val < 100) || 'Please type a real age',
-              ]"
-            />
+              <q-input
+                outlined
+                dense
+                type="password"
+                v-model="password"
+                class="col-12"
+                label="Password"
+                lazy-rules
+                :rules="[
+                  (val) =>
+                    (val !== null && val !== '') || 'Please type your age',
+                  (val) => (val > 0 && val < 100) || 'Please type a real age',
+                ]"
+              />
 
-            <q-btn
-              class="col-12"
-              label="Log In"
-              type="submit"
-              color="primary"
-            />
-          </q-form>
-          <q-btn flat src="src/assets/facebook-icon.png" >
-            <q-avatar square size="16px">
-              <img src="src/assets/facebook-icon.png" label="Log in with facebook">
+              <q-btn
+                class="col-12"
+                label="Log In"
+                type="submit"
+                color="primary"
+              />
+            </q-form>
+            <div class="q-pa-md">
+              <q-separator color="black" inset />
+            </div>
+          </div>
+          <div class="text-center">
+          <q-btn flat src="src/assets/facebook-icon.png">
+            <q-avatar square size="16px" >
+              <img
+                src="src/assets/facebook-icon.png"
+                label="Log in with Facebook"
+                style=""
+              />
             </q-avatar>
-            <div>log in with facebook </div>
+            <div class="text-lowercase">log in with Facebook</div>
           </q-btn>
+        </div>
+
           <!-- Forgot Instagram Password -->
           <a href="#"></a>
-          <div>Forgot Password?</div>
+          <div class="text-center">Forgot Password?</div>
           <q-card-section class="text-center q-md-md">
-            <div class="q-pa-md q-gutter-sm" style="width: 100%; ">
+            <div class="q-pa-md q-gutter-xl" style="width: 100%">
               <q-page
                 id="parent"
                 class="fit row wrap justify-center items-start content-start"
                 style="overflow: hidden"
               >
-                <div class="col-gutter- bg-white-6">
+                <div class="col-gutter-md bg-white-6">
                   <div class="row justify-center">
                     <q-card>Don't have an account? Sign up</q-card>
 
                     <div>
-                      <div class="col-4">
+                      <div class="text center row-4">
                         <div>Get App?</div>
-                        <a
-                          aria-label="Download on the App Store"
-                          class="instaplaybuttons"
+                        <q-btn
+                          flat
+                          src="src/assets/download on the App Store.png"
                           href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo"
-                          tabindex="0"
                         >
-                          <img
-                            alt="Download on the App Store"
-                            class="App Button"
-                            src="src/assets/download on the App Store.png"
-                            height="40"
-                            width="136"
-                        /></a>
-                      </div>
-                      <div class="col-5">
-                        <a
-                          aria-label="Get it on Google Play"
-                          class="z1VUo"
+                          <q-avatar square size="100px">
+                            <q-img
+                              src="src/assets/download on the App Store.png"
+                              heigh="40"
+                              width="137"
+                            />
+                          </q-avatar>
+                        </q-btn>
+                        <q-btn
+                          flat
+                          src="src/assets/Get it on Google Play.png"
                           href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D0805B945-FF48-4C78-809F-9C80BE81B570%26utm_content%3Dlo%26utm_medium%3Dbadge"
-                          tabindex="0"
                         >
-                          <img
-                            alt="Get it on Google Play"
-                            class="Rt8TI"
-                            src="src/assets/Get it on Google Play.png"
-                            height="40"
-                            width="136"
-                        /></a>
+                          <q-avatar square size="100px">
+                            <q-img
+                              src="src/assets/Get it on Google Play.png"
+                              heigh="40"
+                              width="137"
+                            />
+                          </q-avatar>
+                        </q-btn>
+
                       </div>
                     </div>
                   </div>
