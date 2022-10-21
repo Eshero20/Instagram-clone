@@ -36,7 +36,7 @@ const onReset = () => {
 <template>
   <q-page class="window-height window-width row justify-center items-center">
     <div class="row">
-      <div class="col-5 q-pr-xs">
+      <div class="col-5 q-py-xl">
         <q-img height="500px" width="300px" src="../assets/phones.png" />
       </div>
       <div class="col-6 q-pr-sm" style="width: 55%">
@@ -152,13 +152,8 @@ const onReset = () => {
               </div>
             </q-card>
             <div class="text-right">Get App.</div>
-            <q-page class="q-pr-md">
-              <q-card
-                square
-                flat
-                class="shadow-10; text-center; q-pl-lx"
-                style="width:200px;height:100px; fit;"
-              >
+            <q-page class="q-xy-md">
+
                 <div class="row justify-center">
                   <div class="col-12 col-md">
                     <a
@@ -181,7 +176,7 @@ const onReset = () => {
                   </div>
 
                 </div>
-              </q-card>
+
             </q-page>
           </div>
         </q-page>
