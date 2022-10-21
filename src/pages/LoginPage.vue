@@ -39,7 +39,7 @@ const onReset = () => {
       <div class="col-5 q-pr-xs">
         <q-img height="500px" width="300px" src="../assets/phones.png" />
       </div>
-      <div class="col-6 q-pr-xs" style="width: 55%">
+      <div class="col-6 q-pr-sm" style="width: 55%">
         <q-page class="q-pa-md">
           <q-card
             square
@@ -50,8 +50,8 @@ const onReset = () => {
           >
             <div class="loginbox">
               <q-img
-                width="209px"
-                class="q-pr-sm"
+                width="250px"
+                class="q-pr-xl"
                 position="5px 0px "
                 src="../assets/instagram-logo.png"
               />
@@ -137,51 +137,64 @@ const onReset = () => {
                 <div class="col-gutter-sm">
                   <div class="justify-center">
                     <div class="col-12">
-                      <div>Don't have an account? Sign up</div>
+                      <div>
+                        Don't have an account?<q-btn
+                          flat
+                          color="primary"
+                          label="Sign up"
+                          class="text-capitalize text-no-wrap"
+                        />
+                      </div>
                     </div>
                     <div></div>
                   </div>
                 </div>
               </div>
             </q-card>
-            <div class="text-center">
-              <div class="q-pl-xl">Get App.</div>
-              <div class="col-md-10" style="height: 30px">
-                <div class="col-md-6">
-                  <q-btn
-                    flat
-                    src="src/assets/download on the App Store.png"
-                    href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo"
-                  >
-                    <q-avatar square size="100px">
-                      <q-img
+            <div class="text-right">Get App.</div>
+            <q-page class="q-pr-md">
+              <q-card
+                square
+                flat
+                class="shadow-10; text-center; q-pl-lx"
+                style="width:200px;height:100px; fit;"
+              >
+                <div class="row justify-center">
+                  <div class="col-12 col-md">
+                    <a
+                      href="https://apps.apple.com/us/app/instagram/id389801252?itsct=apps_box_badge&amp;itscg=30200"
+                      ><img
+                        alt="Download on the App Store"
                         src="src/assets/download on the App Store.png"
-                        heigh="40"
-                        width="137"
-                      />
-                    </q-avatar>
-                  </q-btn>
+                        width="150"
+
+                    /></a>
+                  </div>
+                  <div class="col-12 col-md-2">
+                    <a
+                      href="ttps://play.google.com/store/apps/details?id=com.instagram.android&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                      ><img
+                        src="src/assets/Get it on Google Play.png"
+                        alt="Get it on Google Play"
+                        width="150"
+                    /></a>
+                  </div>
+
                 </div>
-              </div>
-              <div class="col-4 col-md-6">
-                <q-btn
-                  flat
-                  src="src/assets/Get it on Google Play.png"
-                  href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D0805B945-FF48-4C78-809F-9C80BE81B570%26utm_content%3Dlo%26utm_medium%3Dbadge"
-                >
-                  <q-avatar square size="100px">
-                    <q-img
-                      src="src/assets/Get it on Google Play.png"
-                      heigh="40"
-                      width="137"
-                    />
-                  </q-avatar>
-                </q-btn>
-              </div>
-            </div>
+              </q-card>
+            </q-page>
           </div>
         </q-page>
       </div>
     </div>
   </q-page>
 </template>
+
+<style>
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0px 700px 100px;
+}
+</style>
