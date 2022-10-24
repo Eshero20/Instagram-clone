@@ -106,6 +106,7 @@ const onReset = () => {
             <div>
               Don't have an account?<q-btn
                 flat
+                @click="router.push('src/components/NewAccountForm.vue')"
                 color="primary"
                 label="Sign up"
                 class="text-capitalize q-px-xs"
