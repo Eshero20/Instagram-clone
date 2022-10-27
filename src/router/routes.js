@@ -12,6 +12,8 @@ const routes = [
       },
     ],
   },
+  
+  // new account login /NewAccount
 
   // Always leave this as last one,
   // but you can also remove it
@@ -21,5 +23,4 @@ const routes = [
     component: () => import("pages/ErrorNotFound.vue"),
   },
 ];
-
 export default routes;

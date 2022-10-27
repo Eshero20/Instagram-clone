@@ -2,10 +2,11 @@
 import { useQuasar } from "quasar";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import SignUpForm from "src/components/SignUpForm.vue";
 
 const $q = useQuasar();
 const router = useRouter();
-
+const signUp = ref(false);
 const username = ref(null);
 const password = ref(null);
 const accept = ref(false);
@@ -36,19 +37,18 @@ const onReset = () => {
 </script>
 
 <template>
-  <q-page
-    class="window-height window-width row justify-center items-center q-px-xl"
-  >
-    <div class="row q-px-xl">
+  <q-page class="window-height window-width row justify-center items-center q-pa-md">
+
+    <div class="row q-pa-xs">
       <div class="col-6 text-right">
         <q-img height="650px" width="450px" src="../assets/phones.png" />
       </div>
-      <div class="col-6 q-px-xl text-left">
-        <q-card square flat bordered class="text-center">
+      <div class="col-5 q-pa-lg text-left">
+        <q-card v-if="!signUp" square flat bordered class="text-center">
           <q-card-section>
             <q-img width="250px" src="../assets/instagram-logo.png" />
           </q-card-section>
-          <q-form @submit="onSubmit" @reset="onReset" class="row q-px-xl">
+          <q-form @submit="onSubmit" @reset="onReset" class="row q-px-lg">
             <q-input
               outlined
               dense
@@ -101,12 +101,13 @@ const onReset = () => {
             />
           </div>
         </q-card>
+        <SignUpForm v-else />
         <div class="col-6 q-pt-md">
           <q-card square flat bordered class="text-center q-pa-md">
             <div>
               Don't have an account?<q-btn
                 flat
-                @click="router.push('src/components/NewAccountForm.vue')"
+                @click="signUp = !signUp"
                 color="primary"
                 label="Sign up"
                 class="text-capitalize q-px-xs"
@@ -136,7 +137,10 @@ const onReset = () => {
         </div>
       </div>
     </div>
-  </q-page>
+    </q-page>
 </template>
 
-<style></style>
+<style lang="sass" scoped>
+
+
+</style>
