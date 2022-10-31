@@ -37,13 +37,13 @@ const onReset = () => {
 </script>
 
 <template>
-  <q-page class="window-height window-width row justify-center items-center q-pa-md">
+  <q-page class="row justify-center items-center q-pb-xs">
 
-    <div class="row q-pa-xs">
+    <div class="row q-pb-md">
       <div class="col-6 text-right">
         <q-img height="650px" width="450px" src="../assets/phones.png" />
       </div>
-      <div class="col-5 q-pa-lg text-left">
+      <div class="col-5 q-py-xs text-left">
         <q-card v-if="!signUp" square flat bordered class="text-center">
           <q-card-section>
             <q-img width="250px" src="../assets/instagram-logo.png" />

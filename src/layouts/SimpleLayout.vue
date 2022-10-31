@@ -3,7 +3,7 @@
   <div class="q-pr-lg">
     <q-layout view="hHh LpR fff">
       <q-footer
-        class="fixed bg-white text-center transparent capitalize"
+        class="absolute-fixed bg-white text-center transparent capitalize"
         color="white"
       >
         <q-btn
