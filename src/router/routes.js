@@ -12,7 +12,13 @@ const routes = [
       },
     ],
   },
-  
+  {
+    path: "/home",
+
+    component: () => import("src/layouts/MainLayout.vue"),
+
+   
+  },
   // new account login /NewAccount
 
   // Always leave this as last one,
