@@ -9,8 +9,15 @@
       </q-avatar>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- drawer content -->
+    <q-drawer show-if-above bordered v-model="rightDrawerOpen" side="right">
+      <div class="q-pa-lg">
+            <RouterLink class="active" to="/">
+              <q-avatar size="75px">
+                <img src="https://cdn.quasar.dev/img/avatar.png">
+                
+              </q-avatar>
+            </RouterLink>
+      </div>
     </q-drawer>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
@@ -30,12 +37,20 @@
           </div>
         </div>
         <q-footer>
-          <q-btn flat color="black" label="menu" icon="fa-bars" align="left" style="width: 280px">
+          <q-btn
+            flat
+            color="black"
+            icon="fas fa-bars"
+            label="menu"
+            align="left"
+            style="width: 280px"
+          >
             <q-menu fit>
               <q-list style="min-width: 100px">
                 <q-item clickable>
                   <q-item-section>New tab</q-item-section>
                 </q-item>
+                <q-separator />
                 <q-item clickable>
                   <q-item-section>New incognito tab</q-item-section>
                 </q-item>
@@ -43,9 +58,11 @@
                 <q-item clickable>
                   <q-item-section>Recent tabs</q-item-section>
                 </q-item>
+                <q-separator />
                 <q-item clickable>
                   <q-item-section>History</q-item-section>
                 </q-item>
+                <q-separator />
                 <q-item clickable>
                   <q-item-section>Downloads</q-item-section>
                 </q-item>
@@ -55,6 +72,7 @@
                 </q-item>
                 <q-separator />
                 <q-item clickable>
+                  <q-separator />
                   <q-item-section>Help &amp; Feedback</q-item-section>
                 </q-item>
               </q-list>
@@ -64,8 +82,64 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
-      <router-view />
+<q-page-container>
+<q-page bordered padding>
+  <div class="col-5 q-pa-md">
+    <q-card square flat bordered class="text-center" style="width: auto">
+      <div class="col q-pr-xs text-left">
+        <div class="row q-pa-md justify-between items-center">
+          <div bordered class="col-20 self-center offset-3 overflow:auto; style=circle border">
+            <div class="q-pr-xs q-gutter-md">
+            <RouterLink class="active" to="/">
+              <q-avatar size="75px">
+                <img src="https://cdn.quasar.dev/img/avatar.png">
+              </q-avatar>
+            </RouterLink>
+            <RouterLink class="active" to="/">
+              <q-avatar size="75px">
+                <img src="https://cdn.quasar.dev/img/avatar.png">
+              </q-avatar>
+            </RouterLink>
+            <RouterLink class="active" to="/">
+              <q-avatar size="75px">
+                <img src="https://cdn.quasar.dev/img/avatar.png">
+              </q-avatar>
+            </RouterLink>
+            <RouterLink class="active" to="/">
+              <q-avatar size="75px">
+                <img src="https://cdn.quasar.dev/img/avatar.png">
+              </q-avatar>
+            </RouterLink>
+            <RouterLink class="active" to="/">
+              <q-avatar size="75px">
+                <img src="https://cdn.quasar.dev/img/avatar.png">
+              </q-avatar>
+            </RouterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </q-card>
+  </div>
+    <q-seperator />
+    <div class="col-13 q-pa-md" style="width: auto">
+      <q-card square flat bordered class="text-center col-5 q-pa-sm">
+      <div class="q-pa-xs justify-between items-center">
+        <div bordered class="col-20 self-center offset-3 overflow:auto; style=circle border">
+          <div class="q-pr-xs q-gutter-md">
+            <img src="https://cdn.quasar.dev/img/mountains.jpg" style="width: 400px" />
+              <q-card-actions align="right">
+                <q-btn flat round color="red" icon="favorite" />
+                <q-btn flat round color="teal" icon="bookmark" />
+                <q-btn flat round color="primary" icon="share" />
+              </q-card-actions>
+          </div>
+        </div>
+      </div>
+      </q-card>
+   </div>
+</q-page>
+            <router-view />
     </q-page-container>
   </q-layout>
 </template>

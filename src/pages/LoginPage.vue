@@ -119,19 +119,23 @@ const onReset = () => {
 
           <div class="row justify-center">
             <div class="col-6 text-right q-pr-sm">
+            <RouterLink class="active" to="/">
               <img
                 @click="router.push('/')"
                 alt="Download on the App Store"
                 src="src/assets/download on the App Store.png"
                 width="150"
               />
+            </RouterLink>
             </div>
             <div class="col-6 text-left q-pl-sm">
+            <RouterLink class="active" to="/">
               <img
                 src="src/assets/Get it on Google Play.png"
                 alt="Get it on Google Play"
                 width="150"
               />
+            </RouterLink>
             </div>
           </div>
         </div>
