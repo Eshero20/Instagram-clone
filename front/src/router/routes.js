@@ -1,31 +1,28 @@
 const routes = [
   {
     path: "/",
-
     component: () => import("src/layouts/SimpleLayout.vue"),
-
     children: [
       {
         path: "",
-
+        name: "LoginPage",
         component: () => import("pages/LoginPage.vue"),
       },
     ],
   },
   {
-    path: "/home",
-
+    path: "/",
     component: () => import("src/layouts/MainLayout.vue"),
-
-   
+    children: [
+      {
+        path: "/home",
+        name: "HomePage",
+        component: () => import("pages/HomePage.vue"),
+      },
+    ],
   },
-  // new account login /NewAccount
-
-  // Always leave this as last one,
-  // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-
     component: () => import("pages/ErrorNotFound.vue"),
   },
 ];
