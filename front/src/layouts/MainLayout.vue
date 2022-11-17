@@ -19,7 +19,7 @@ const linksList = [
   {
     title: "Explore",
     caption: "",
-    icon: "fas fa-circle",
+    icon: "o_explore",
     link: "https://chat.quasar.dev",
   },
   {
@@ -31,19 +31,19 @@ const linksList = [
   {
     title: "Notifications",
     caption: "",
-    icon: "fas fa-feed",
+    icon: "o_favorite_border",
     link: "https://twitter.quasar.dev",
   },
   {
     title: "Create",
     caption: "",
-    icon: "fas fa-square",
+    icon: "circle_add_o",
     link: "https://facebook.quasar.dev",
   },
   {
     title: "Profile",
     caption: "",
-    icon: "fas fa-user",
+    icon: "o_account_circle",
     link: "https://awesome.quasar.dev",
   },
 ];
@@ -118,7 +118,7 @@ export default defineComponent({
       </q-avatar>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right">
+ <!--  <q-drawer show-if-above v-model="rightDrawerOpen" side="right">
       <div class="q-pa-lg">
         <RouterLink class="active" to="/">
           <q-avatar size="75px">
@@ -127,7 +127,7 @@ export default defineComponent({
         </RouterLink>
       </div>
     </q-drawer>
-
+  -->
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
@@ -153,12 +153,14 @@ export default defineComponent({
               />
             </div>
           </div>
-          <q-footer class="absolute-fixed">
+          <q-footer class="bg-white text-primary">
             <q-btn
               flat
-              color="black"
+              class="absolute-fixed"
+              color="white"
+              text-color="black"
               icon="fas fa-bars"
-              label="menu"
+              label="More"
               align="left"
               style="width: 280px"
             >

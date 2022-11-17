@@ -39,14 +39,14 @@ const onReset = () => {
 <template>
   <q-page class="row justify-center items-center q-pb-xs">
 
-    <div class="row q-pb-md">
+    <div class="row q-pb-sm">
       <div class="col-6 text-right">
         <q-img height="650px" width="450px" src="../assets/phones.png" />
       </div>
-      <div class="col-5 q-py-xs text-left">
+      <div class="col-5 q-pa-xl  text-left" style="max-width:500px">
         <q-card v-if="!signUp" square flat bordered class="text-center">
           <q-card-section>
-            <q-img width="250px" src="../assets/instagram-logo.png" />
+            <q-img width="180px" src="../assets/instagram-logo.png" />
           </q-card-section>
           <q-form @submit="onSubmit" @reset="onReset" class="row q-px-lg">
             <q-input
