@@ -37,13 +37,129 @@ const onReset = () => {
 </script>
 
 <template>
-  <q-page class="row justify-center items-center q-pb-xs">
-
-    <div class="row q-pb-sm">
-      <div class="col-6 text-right">
-        <q-img height="650px" width="450px" src="../assets/phones.png" />
+  <q-page class="flex fit row justify-center items-center">
+    <div class="row justify-center flex center">
+      <div class="col-5 q-pa-lg q-pl-xl">
+        <q-img height="620px" width="400px" src="../assets/phones.png" />
       </div>
-      <div class="col-5 q-pa-xl  text-left" style="max-width:500px">
+      <div class="col-5 q-pa-xl q-mt-md ">
+        <q-card v-if="!signUp" square flat bordered class="text-center">
+          <q-card-section class="q-pb-xs">
+            <q-img width="180px" src="../assets/instagram-logo.png" />
+          </q-card-section>
+          <div class="q-pb-xs" style="max-width: 500px max-content:fit-content">
+            <q-form
+              @submit="onSubmit"
+              @reset="onReset"
+              class="row q-px-md q-gutter-col-sm"
+            >
+              <q-input
+                outlined
+                dense
+                v-model="username"
+                class="col-12 q-pa-xs"
+                label="Phone number, username, or email"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please type log in',
+                ]"
+              />
+
+              <q-input
+                outlined
+                dense
+                type="password"
+                v-model="password"
+                class="col-12 q-px-xs q-pb-md"
+                label="Password"
+                lazy-rules
+                :rules="[
+                  (val) =>
+                    (val !== null && val !== '') || 'Please type your password',
+                  (val) =>
+                    (val > 0 && val < 100) || 'Please type your password',
+                ]"
+              />
+
+              <q-btn
+                class="col-12 text-capitalize"
+                size="11px"
+                padding="sm"
+                label="Log in"
+                type="submit"
+                color="primary"
+              />
+            </q-form>
+          </div>
+          <div class="q-pa-md">
+            <q-separator color="black" inset />
+          </div>
+          <div class="text-center">
+            <q-btn
+              label="log in with Facebook"
+              class="text-body2 text-weight-bold text-capitalize"
+              flat
+              size="13px"
+              icon="fa-brands fa-square-facebook"
+              color="blue-10"
+            />
+            <br /><q-btn
+              flat
+              class="text-body2 text-weight-bold text-capitalize"
+              size="11px"
+              label="Forgot password?"
+              color="blue-10"
+            />
+          </div>
+        </q-card>
+        <SignUpForm v-else />
+        <div class="col-6 q-pt-md">
+          <q-card square flat bordered class="text-center q-pa-sm">
+            <div>
+              Don't have an account?<q-btn
+                flat
+                @click="signUp = !signUp"
+                color="primary"
+                label="Sign up"
+                class="text-capitalize q-px-xs"
+              />
+            </div>
+          </q-card>
+
+          <div class="text-center q-pa-lg">Get the app.</div>
+
+          <div class="row justify-center">
+            <div class="col-6 text-right q-pa-xs">
+              <RouterLink class="active" to="/">
+                <q-img
+                  @click="router.push('/')"
+                  alt="Download on the App Store"
+                  src="src/assets/download on the App Store.png"
+                  width="150"
+                />
+              </RouterLink>
+            </div>
+            <div class="col-6 text-left q-pa-xs">
+              <RouterLink class="active" to="/">
+                <q-img
+                  src="src/assets/Get it on Google Play.png"
+                  alt="Get it on Google Play"
+                  width="150"
+                />
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---
+    <div class="row q-pa-sm">
+    <div class="col-6 text-right">
+   //     <q-img height="650px" width="450px" src="../assets/phones.png" />
+      </div>
+  -
+      <div class="col-5 q-pa-xl q-gutter-x-sm text-left">
         <q-card v-if="!signUp" square flat bordered class="text-center">
           <q-card-section>
             <q-img width="180px" src="../assets/instagram-logo.png" />
@@ -141,10 +257,8 @@ const onReset = () => {
         </div>
       </div>
     </div>
-    </q-page>
+-->
+  </q-page>
 </template>
 
-<style lang="sass" scoped>
-
-
-</style>
+<style lang="sass" scoped></style>

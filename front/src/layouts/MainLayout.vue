@@ -64,36 +64,7 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      posts: [
-        {
-          id: 1,
-          caption: "Rocky Mounts",
-          date: 1591776655504,
-          location: "Rocky Mountains, United States",
-          ImageUrl: "https://cdn.quasar.dev/img/mountains.jpg",
-        },
-        {
-          id: 2,
-          caption: "Rocky Mounts",
-          date: 1591776655504,
-          location: "Rocky Mountains, United States",
-          ImageUrl: "https://cdn.quasar.dev/img/mountains.jpg",
-        },
-        {
-          id: 3,
-          caption: "Rocky Mounts",
-          date: 1591776655504,
-          location: "Rocky Mountains, United States",
-          ImageUrl: "https://cdn.quasar.dev/img/mountains.jpg",
-        },
-        {
-          id: 4,
-          caption: "Rocky Mounts",
-          date: 1591776655504,
-          location: "Rocky Mountains, United States",
-          ImageUrl: "https://cdn.quasar.dev/img/mountains.jpg",
-        },
-      ],
+
     };
   },
   methods: {
@@ -156,43 +127,47 @@ export default defineComponent({
           <q-footer class="bg-white text-primary">
             <q-btn
               flat
-              class="absolute-fixed"
+              class="absolute-fixed text-capitalize text-weight-bolder"
               color="white"
               text-color="black"
+              size="16px"
               icon="fas fa-bars"
               label="More"
               align="left"
-              style="width: 280px"
+              style="width: 280px size:200px"
             >
               <q-menu fit>
-                <q-list style="min-width: 100px">
-                  <q-item clickable>
-                    <q-item-section>New tab</q-item-section>
-                  </q-item>
-                  <q-separator />
-                  <q-item clickable>
-                    <q-item-section>New incognito tab</q-item-section>
-                  </q-item>
-                  <q-separator />
-                  <q-item clickable>
-                    <q-item-section>Recent tabs</q-item-section>
-                  </q-item>
-                  <q-separator />
-                  <q-item clickable>
-                    <q-item-section>History</q-item-section>
-                  </q-item>
-                  <q-separator />
-                  <q-item clickable>
-                    <q-item-section>Downloads</q-item-section>
-                  </q-item>
-                  <q-separator />
+                <q-list style="max-width: 400px;">
                   <q-item clickable>
                     <q-item-section>Settings</q-item-section>
+
+                  <q-item-section avatar>
+                  <q-icon name="o_settings" />
+                  </q-item-section>
+                </q-item>
+                  <q-separator />
+                  <q-item clickable>
+                    <q-item-section>Saved</q-item-section>
+
+                  <q-item-section avatar>
+                  <q-icon name="bookmark_border" />
+                  </q-item-section>
+                </q-item>
+                  <q-separator />
+                  <q-item clickable>
+                    <q-item-section>Report a problem</q-item-section>
+
+                  <q-item-section avatar>
+                  <q-icon name="o_live_help" />
+                  </q-item-section>
+                </q-item>
+                  <q-separator />
+                  <q-item clickable>
+                    <q-item-section>Switch accounts</q-item-section>
                   </q-item>
                   <q-separator />
                   <q-item clickable>
-                    <q-separator />
-                    <q-item-section>Help &amp; Feedback</q-item-section>
+                    <q-item-section>Log out</q-item-section>
                   </q-item>
                 </q-list>
               </q-menu>
