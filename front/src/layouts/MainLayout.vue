@@ -1,8 +1,10 @@
-<script>
+<script setup>
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import { date } from "quasar";
+import useLogout from "front/src/stores/UseLogout.Vue";
 
+const { loading, onLogoutClicked } = useLogout();
 
 const linksList = [
   {
@@ -48,36 +50,15 @@ const linksList = [
     link: "https://awesome.quasar.dev",
   },
 ];
-
-export default defineComponent({
-  name: "MainLayout",
-
-  components: {
-    EssentialLink,
-  },
-
-  setup() {
-    const leftDrawerOpen = ref(false);
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
-    };
-  },
-  methods: {
-    formatDate(dateString) {
-      const date = new Date(dateString);
-      return new Intl.DateTimeFormat("default", { dateStyle: "long" }).format(
-        date
-      );
-    },
-  },
-});
-
-
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("default", { dateStyle: "long" }).format(date);
+};
+const toggleLeftDrawer = () => {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+};
+const leftDrawerOpen = ref(false);
+const essentialLinks = ref(linksList);
 </script>
 
 <template>
@@ -138,7 +119,9 @@ export default defineComponent({
               align="left"
               style="width: 280px size:200px"
             >
-              <q-menu fit>
+              <AuthMenu />
+
+              <!-- <q-menu fit>
                 <q-list style="max-width: 400px">
                   <q-item clickable>
                     <q-item-section>Settings</q-item-section>
@@ -176,7 +159,7 @@ export default defineComponent({
                     <q-item-section> Logout </q-item-section>
                   </q-item>
                 </q-list>
-              </q-menu>
+              </q-menu> -->
             </q-btn>
           </q-footer>
         </q-list>

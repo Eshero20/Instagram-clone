@@ -6,10 +6,10 @@ const apiBaseUrl = formatUrlBase(
   process.env.API_BASE ? process.env.API_BASE : "localhost:1337"
 );
 
-export const useCounterStore = defineStore("counter", {
+export const useAuthStore = defineStore("auth", {
   state: () => ({
     user: null,
-    apiServer: apiBaseUrl,
+    server: apiBaseUrl,
   }),
   getters: {
     apiServer: (state) => state.server,
@@ -22,5 +22,12 @@ export const useCounterStore = defineStore("counter", {
     login() {
       this.counter++;
     },
+
   },
+  /// log out function
+  logout() {
+    this.user = null;
+    localStorage.removeItem('user');
+    router.push('/account/login');
+}
 });
