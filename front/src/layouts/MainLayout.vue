@@ -3,6 +3,7 @@ import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import { date } from "quasar";
 
+
 const linksList = [
   {
     title: "Home",
@@ -64,7 +65,6 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-
     };
   },
   methods: {
@@ -76,6 +76,8 @@ export default defineComponent({
     },
   },
 });
+
+
 </script>
 
 <template>
@@ -89,7 +91,7 @@ export default defineComponent({
       </q-avatar>
     </q-drawer>
 
- <!--  <q-drawer show-if-above v-model="rightDrawerOpen" side="right">
+    <!--  <q-drawer show-if-above v-model="rightDrawerOpen" side="right">
       <div class="q-pa-lg">
         <RouterLink class="active" to="/">
           <q-avatar size="75px">
@@ -137,37 +139,41 @@ export default defineComponent({
               style="width: 280px size:200px"
             >
               <q-menu fit>
-                <q-list style="max-width: 400px;">
+                <q-list style="max-width: 400px">
                   <q-item clickable>
                     <q-item-section>Settings</q-item-section>
 
-                  <q-item-section avatar>
-                  <q-icon name="o_settings" />
-                  </q-item-section>
-                </q-item>
+                    <q-item-section avatar>
+                      <q-icon name="o_settings" />
+                    </q-item-section>
+                  </q-item>
                   <q-separator />
                   <q-item clickable>
                     <q-item-section>Saved</q-item-section>
 
-                  <q-item-section avatar>
-                  <q-icon name="bookmark_border" />
-                  </q-item-section>
-                </q-item>
+                    <q-item-section avatar>
+                      <q-icon name="bookmark_border" />
+                    </q-item-section>
+                  </q-item>
                   <q-separator />
                   <q-item clickable>
                     <q-item-section>Report a problem</q-item-section>
 
-                  <q-item-section avatar>
-                  <q-icon name="o_live_help" />
-                  </q-item-section>
-                </q-item>
+                    <q-item-section avatar>
+                      <q-icon name="o_live_help" />
+                    </q-item-section>
+                  </q-item>
                   <q-separator />
                   <q-item clickable>
                     <q-item-section>Switch accounts</q-item-section>
                   </q-item>
                   <q-separator />
-                  <q-item clickable>
-                    <q-item-section>Log out</q-item-section>
+                  <q-item clickable @click="onLogoutClicked">
+                    <q-item-section side>
+                      <q-icon v-if="!loading" name="logout" />
+                      <q-spinner v-else size="sm" color="primary" />
+                    </q-item-section>
+                    <q-item-section> Logout </q-item-section>
                   </q-item>
                 </q-list>
               </q-menu>
@@ -181,5 +187,3 @@ export default defineComponent({
     </q-page-container>
   </q-layout>
 </template>
-
-

@@ -3,6 +3,8 @@ import { useQuasar } from "quasar";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import SignUpForm from "src/components/SignUpForm.vue";
+import { UserStore, useUserStore } from "../stores/user";
+import { anyTypeAnnotation } from "@babel/types";
 
 const $q = useQuasar();
 const router = useRouter();
@@ -34,10 +36,12 @@ const onReset = () => {
   password.value = null;
   accept.value = false;
 };
+
+
 </script>
 
 <template>
-  <q-page class="flex fit row justify-center items-center">
+  <q-page class="flex fit row justify-center items-center items-shrink">
     <div class="row justify-center flex center">
       <div class="col-5 q-pa-lg q-pl-xl">
         <q-img height="620px" width="400px" src="../assets/phones.png" />
@@ -50,6 +54,7 @@ const onReset = () => {
           <div class="q-pb-xs" style="max-width: 500px max-content:fit-content">
             <q-form
               @submit="onSubmit"
+              @submiy.prevent="login"
               @reset="onReset"
               class="row q-px-md q-gutter-col-sm"
             >
@@ -112,7 +117,9 @@ const onReset = () => {
             />
           </div>
         </q-card>
-        <SignUpForm v-else />
+        <div v-else class="q-py-xl">
+        <SignUpForm />
+      </div>
         <div class="col-6 q-pt-md">
           <q-card square flat bordered class="text-center q-pa-sm">
             <div>

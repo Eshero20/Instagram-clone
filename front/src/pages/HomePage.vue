@@ -1,8 +1,10 @@
-<script setup>
+<script>
 import { reactive, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import { date } from "quasar";
 import moment from "moment";
+import { useUserStore } from "../store/user";
+
 
 const posts = reactive([
   {
@@ -99,8 +101,4 @@ const formatDate = (dateString) => {
 </template>
 
 <style lang="sass" scoped>
-.cardpost
-  .q-img
-    min-height: 20px
-    max-weight: 20px
 </style>

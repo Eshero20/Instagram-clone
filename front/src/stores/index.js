@@ -1,6 +1,8 @@
-import { store } from 'quasar/wrappers'
-import { createPinia } from 'pinia'
-
+import { store } from "quasar/wrappers";
+import { createPinia } from "pinia";
+import { createApp, markRaw } from "vue";
+import router from "../router";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation;
@@ -9,12 +11,17 @@ import { createPinia } from 'pinia'
  * async/await or return a Promise which resolves
  * with the Store instance.
  */
-
 export default store((/* { ssrContext } */) => {
-  const pinia = createPinia()
-
+  const pinia = createPinia();
   // You can add Pinia plugins here
   // pinia.use(SomePiniaPlugin)
+  pinia.use(({ store }) => {
+    // Use router in pinia stores
+    store.router = markRaw(router);
+  });
+  createApp(App).use(pinia).mount("#app");
+  // Persist Pinia through refresh via localstorage
+  pinia.use(piniaPluginPersistedstate);
+  return pinia;
+});
 
-  return pinia
-})

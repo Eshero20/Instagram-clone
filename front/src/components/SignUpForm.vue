@@ -6,19 +6,24 @@ export default {
       email: "",
       username: "",
       password: "",
+      FullName: "",
     };
+  },
+  computed: {
+    IsBtnDisabled() {
+      return !(this.email && this.FullName && this.username && this.password);
+    },
   },
 };
 </script>
 
 <template>
   <q-card
-    constrain
     square
     flat
     bordered
-    class="row q-px-y-sm"
-    style="max-width:500px"
+    class="row q-px-y-xs q-mt-xs"
+    style="max-width: 500px"
   >
     <div class="row q-pt-md text-center card1">
       <q-card-section class="q-pt-xs">
@@ -37,7 +42,7 @@ export default {
           color="blue-6"
         />
         <br />
-        <div class="RegisterForm1">
+        <div class="LoginAccount">
           <q-form
             :key="FormInput"
             @submit="onSubmit"
@@ -79,7 +84,7 @@ export default {
               bg-color="grey-2"
               outlined
               dense
-              v-model="Username"
+              v-model="username"
               class="col-12 q-px-lg q-pb-xs"
               label="Username"
               lazy-rules
@@ -134,7 +139,7 @@ export default {
               class="text-capitalize q-mt-md"
               v-model="SubmitButton"
               size="15px"
-              :disabled="!isComplete"
+              :disabled="IsBtnDisabled"
               label="Sign up"
               type="submit"
               padding="0px 100px 0px 100px"
@@ -161,18 +166,9 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-shrink: 29;
   font-size: 100%;
   margin: -30px;
   padding: 40px 20px 20px 20px;
-
-
-}
-
-
-.RegisterForm1 {
-  flex: content;
-  margin: 0px;
-  padding: 6px 10px 10px 10px;
-  text-overflow: ellipsis;
 }
 </style>
