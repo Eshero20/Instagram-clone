@@ -4,7 +4,6 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import SignUpForm from "src/components/SignUpForm.vue";
 import { useAuthStore } from "../stores/auth";
-import { anyTypeAnnotation } from "@babel/types";
 
 const authStore = useAuthStore();
 const $q = useQuasar();
