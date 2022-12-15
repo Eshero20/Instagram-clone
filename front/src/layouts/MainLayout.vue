@@ -1,10 +1,6 @@
 <script setup>
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
-import { date } from "quasar";
-import useLogout from "front/src/stores/UseLogout.Vue";
-
-const { loading, onLogoutClicked } = useLogout();
 
 const linksList = [
   {
@@ -82,43 +78,22 @@ const essentialLinks = ref(linksList);
       </div>
     </q-drawer>
   -->
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      clas="absolute-fixed"
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered clas="absolute-fixed">
       <q-scroll-area class="fit">
         <q-list>
           <div class="q-pa-lg">
-            <q-img
-              src="src/assets/instagram-front-logo.png"
-              style="width: 100px"
-            >
+            <q-img src="src/assets/instagram-front-logo.png" style="width: 100px">
             </q-img>
           </div>
 
           <div class="q-bt-sm">
             <div class="q-gutter-md">
-              <EssentialLink
-                v-for="link in essentialLinks"
-                :key="link.title"
-                v-bind="link"
-              />
+              <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
             </div>
           </div>
           <q-footer class="bg-white text-primary">
-            <q-btn
-              flat
-              class="absolute-fixed text-capitalize text-weight-bolder"
-              color="white"
-              text-color="black"
-              size="16px"
-              icon="fas fa-bars"
-              label="More"
-              align="left"
-              style="width: 280px size:200px"
-            >
+            <q-btn flat class="absolute-fixed text-capitalize text-weight-bolder" color="white" text-color="black"
+              size="16px" icon="fas fa-bars" label="More" align="left" style="width: 280px size:200px">
               <AuthMenu />
 
               <!-- <q-menu fit>

@@ -1,9 +1,7 @@
-<script>
+<script setup>
 import { reactive, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
-import { date } from "quasar";
 import moment from "moment";
-import { useUserStore } from "../store/user";
+import { useAuthStore } from "../stores/auth";
 
 
 const posts = reactive([
@@ -36,10 +34,6 @@ const posts = reactive([
     ImageUrl: "https://cdn.quasar.dev/img/mountains.jpg",
   },
 ]);
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("default", { dateStyle: "long" }).format(date);
-};
 </script>
 
 <template>
