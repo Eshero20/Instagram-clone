@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["front/src/*"],
+      "app/*": ["*"],
+      "components/*": ["front/src/components/*"],
+      "layouts/*": ["front/src/layouts/*"],
+      "pages/*": ["front/src/pages/*"],
+      "assets/*": ["front/src/assets/*"],
+      "boot/*": ["front/src/boot/*"],
+      "stores/*": ["front/src/stores/*"],
+      "vue$": ["node_modules/vue/dist/vue.runtime.esm-bundler.js"]
+    }
+  },
+  "exclude": ["dist", ".quasar", "node_modules"]
+}
